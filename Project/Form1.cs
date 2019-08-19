@@ -107,6 +107,12 @@ namespace Project
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+            MessageBox.Show("A Clean one");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

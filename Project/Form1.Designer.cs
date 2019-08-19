@@ -320,6 +320,7 @@
             this.Controls.Add(this.loginPagePanel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.loginPagePanel.ResumeLayout(false);
             this.loginPagePanel.PerformLayout();
             this.signUpPagePanel.ResumeLayout(false);
