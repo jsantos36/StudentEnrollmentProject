@@ -14,6 +14,8 @@ namespace Project
     public partial class Form1 : Form
     {
         private string gender;
+        private string studentNumber;
+
         SqlConnection mySQLConnection = new SqlConnection(@"Data Source=DESKTOP-M4EARNV\JONMSSQLSERVER;Initial Catalog=JONMSSQLSERVER-DB01;Persist Security Info=True;User ID=sa;Password=Rantaro60!");
 
         public Form1()
@@ -61,6 +63,8 @@ namespace Project
         {
             CleanUp confirmPass = new CleanUp();
             CleanUp confirmUserName = new CleanUp();
+            CleanUp generateStudentNumber = new CleanUp();
+
             if (confirmPass.MatchField(passwordSUTextBox.Text, confirmPassSUTextBox.Text))
             {
                 if (confirmUserName.EmptyField(usernameSUTextBox.Text))
@@ -68,7 +72,8 @@ namespace Project
                     try
                     {
                         mySQLConnection.Open();
-                        String mySQLQuery = ("INSERT INTO js_LoginInfo (Username,Password,ConfirmPassword,FirstName,LastName,Email,Gender) VALUES ('" + usernameSUTextBox.Text + "', '" + passwordSUTextBox.Text + "','" + confirmPassSUTextBox.Text + "','" + fNameSUTextBox.Text + "'," + "'" + lNameSUTextBox.Text + "','" + emailSUTextBox.Text + "','" + gender + "')");
+                        studentNumber = (generateStudentNumber.StudentNumberGenerator(fNameSUTextBox.Text, lNameSUTextBox.Text));
+                        String mySQLQuery = ("INSERT INTO js_LoginInfo (Username,Password,ConfirmPassword,FirstName,LastName,Email,Gender,StudentNumber,Major) VALUES ('" + usernameSUTextBox.Text + "', '" + passwordSUTextBox.Text + "','" + confirmPassSUTextBox.Text + "','" + fNameSUTextBox.Text + "'," + "'" + lNameSUTextBox.Text + "','" + emailSUTextBox.Text + "','" + gender + "', '"+ studentNumber +"', '" + majorComboBox.Text+ "')");
                         SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
                         mySDA.SelectCommand.ExecuteNonQuery();
                         mySQLConnection.Close();
@@ -94,12 +99,22 @@ namespace Project
             SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
             DataTable myDT = new DataTable();
             mySDA.Fill(myDT);
+
             if (myDT.Rows[0][0].ToString() == "1")
             {
-                mySQLConnection.Close();
+                String mySQLQueryLogin = ("Select * From js_LoginInfo where Username = '" + usernameTextBox.Text + "'");
+                SqlCommand mySQLCommand = new SqlCommand(mySQLQueryLogin, mySQLConnection);
+                SqlDataReader myDataReaderLogin = mySQLCommand.ExecuteReader();
+                myDataReaderLogin.Read();
+
+                sNumberLabel.Text = myDataReaderLogin["StudentNumber"].ToString();
+                fullNameLabel.Text = myDataReaderLogin["FirstName"].ToString() + " " + myDataReaderLogin["LastName"].ToString();
+                majorLabel.Text = myDataReaderLogin["Major"].ToString();
+             
                 loginPagePanel.Visible = false;
                 signUpPagePanel.Visible = false;
                 enrollmentPanel.Visible = true;
+                mySQLConnection.Close();
             }
             else
             {
@@ -112,11 +127,5 @@ namespace Project
         {
             this.Close();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

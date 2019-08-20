@@ -18,3 +18,13 @@ C:\Users\jsantos\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Pro
 C:\Users\jsantos\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
 C:\Users\jsantos\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.exe
 C:\Users\jsantos\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.pdb
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.csprojAssemblyReference.cache
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.Form1.resources
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.Properties.Resources.resources
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.csproj.GenerateResource.cache
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.exe
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\obj\Debug\Project.pdb
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\bin\Debug\Project.exe.config
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\bin\Debug\Project.exe
+C:\Users\jonat\Documents\GitHub\StudentEnrollmentProject\Project\bin\Debug\Project.pdb
