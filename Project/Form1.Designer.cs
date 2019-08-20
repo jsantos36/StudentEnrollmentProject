@@ -54,8 +54,29 @@
             this.fNameSULabel = new System.Windows.Forms.Label();
             this.passwordSULabel = new System.Windows.Forms.Label();
             this.usernameSULabel = new System.Windows.Forms.Label();
+            this.enrollmentPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.editProfileLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.deleteCourseButton = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.addToCartButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.deleteAllButton = new System.Windows.Forms.Button();
+            this.jCoursesRB = new System.Windows.Forms.RadioButton();
+            this.sCoursesRB = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.loginPagePanel.SuspendLayout();
             this.signUpPagePanel.SuspendLayout();
+            this.enrollmentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // passwordLabel
@@ -157,7 +178,7 @@
             this.signUpPagePanel.Controls.Add(this.usernameSULabel);
             this.signUpPagePanel.Location = new System.Drawing.Point(397, 69);
             this.signUpPagePanel.Name = "signUpPagePanel";
-            this.signUpPagePanel.Size = new System.Drawing.Size(416, 493);
+            this.signUpPagePanel.Size = new System.Drawing.Size(432, 489);
             this.signUpPagePanel.TabIndex = 8;
             // 
             // confirmPassSUTextBox
@@ -311,11 +332,209 @@
             this.usernameSULabel.TabIndex = 0;
             this.usernameSULabel.Text = "Username";
             // 
+            // enrollmentPanel
+            // 
+            this.enrollmentPanel.Controls.Add(this.comboBox1);
+            this.enrollmentPanel.Controls.Add(this.sCoursesRB);
+            this.enrollmentPanel.Controls.Add(this.jCoursesRB);
+            this.enrollmentPanel.Controls.Add(this.deleteAllButton);
+            this.enrollmentPanel.Controls.Add(this.deleteButton);
+            this.enrollmentPanel.Controls.Add(this.removeButton);
+            this.enrollmentPanel.Controls.Add(this.addToCartButton);
+            this.enrollmentPanel.Controls.Add(this.splitter1);
+            this.enrollmentPanel.Controls.Add(this.deleteCourseButton);
+            this.enrollmentPanel.Controls.Add(this.label6);
+            this.enrollmentPanel.Controls.Add(this.listBox3);
+            this.enrollmentPanel.Controls.Add(this.label5);
+            this.enrollmentPanel.Controls.Add(this.listBox2);
+            this.enrollmentPanel.Controls.Add(this.label4);
+            this.enrollmentPanel.Controls.Add(this.listBox1);
+            this.enrollmentPanel.Controls.Add(this.label3);
+            this.enrollmentPanel.Controls.Add(this.label2);
+            this.enrollmentPanel.Controls.Add(this.label1);
+            this.enrollmentPanel.Controls.Add(this.editProfileLinkLabel);
+            this.enrollmentPanel.Location = new System.Drawing.Point(12, 12);
+            this.enrollmentPanel.Name = "enrollmentPanel";
+            this.enrollmentPanel.Size = new System.Drawing.Size(1139, 613);
+            this.enrollmentPanel.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Student #: ";
+            // 
+            // editProfileLinkLabel
+            // 
+            this.editProfileLinkLabel.AutoSize = true;
+            this.editProfileLinkLabel.Location = new System.Drawing.Point(1069, 12);
+            this.editProfileLinkLabel.Name = "editProfileLinkLabel";
+            this.editProfileLinkLabel.Size = new System.Drawing.Size(57, 13);
+            this.editProfileLinkLabel.TabIndex = 0;
+            this.editProfileLinkLabel.TabStop = true;
+            this.editProfileLinkLabel.Text = "Eidt Profile";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Full Name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Major:";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(30, 130);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(471, 173);
+            this.listBox1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Courses Enrolled:";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(30, 404);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(471, 173);
+            this.listBox2.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 386);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Available Courses:";
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(628, 404);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(471, 173);
+            this.listBox3.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(625, 386);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Course Shopping Cart";
+            // 
+            // deleteCourseButton
+            // 
+            this.deleteCourseButton.Location = new System.Drawing.Point(425, 309);
+            this.deleteCourseButton.Name = "deleteCourseButton";
+            this.deleteCourseButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteCourseButton.TabIndex = 10;
+            this.deleteCourseButton.Text = "Delete";
+            this.deleteCourseButton.UseVisualStyleBackColor = true;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 613);
+            this.splitter1.TabIndex = 11;
+            this.splitter1.TabStop = false;
+            // 
+            // addToCartButton
+            // 
+            this.addToCartButton.Location = new System.Drawing.Point(530, 449);
+            this.addToCartButton.Name = "addToCartButton";
+            this.addToCartButton.Size = new System.Drawing.Size(75, 23);
+            this.addToCartButton.TabIndex = 12;
+            this.addToCartButton.Text = "Add to Cart >";
+            this.addToCartButton.UseVisualStyleBackColor = true;
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(530, 493);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.TabIndex = 13;
+            this.removeButton.Text = "Remove ";
+            this.removeButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(1024, 583);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 14;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteAllButton
+            // 
+            this.deleteAllButton.Location = new System.Drawing.Point(943, 583);
+            this.deleteAllButton.Name = "deleteAllButton";
+            this.deleteAllButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteAllButton.TabIndex = 15;
+            this.deleteAllButton.Text = "Delete All";
+            this.deleteAllButton.UseVisualStyleBackColor = true;
+            // 
+            // jCoursesRB
+            // 
+            this.jCoursesRB.AutoSize = true;
+            this.jCoursesRB.Location = new System.Drawing.Point(130, 381);
+            this.jCoursesRB.Name = "jCoursesRB";
+            this.jCoursesRB.Size = new System.Drawing.Size(94, 17);
+            this.jCoursesRB.TabIndex = 16;
+            this.jCoursesRB.TabStop = true;
+            this.jCoursesRB.Text = "Junior Courses";
+            this.jCoursesRB.UseVisualStyleBackColor = true;
+            // 
+            // sCoursesRB
+            // 
+            this.sCoursesRB.AutoSize = true;
+            this.sCoursesRB.Location = new System.Drawing.Point(249, 381);
+            this.sCoursesRB.Name = "sCoursesRB";
+            this.sCoursesRB.Size = new System.Drawing.Size(96, 17);
+            this.sCoursesRB.TabIndex = 17;
+            this.sCoursesRB.TabStop = true;
+            this.sCoursesRB.Text = "Senior Courses";
+            this.sCoursesRB.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(375, 377);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1163, 637);
+            this.Controls.Add(this.enrollmentPanel);
             this.Controls.Add(this.signUpPagePanel);
             this.Controls.Add(this.loginPagePanel);
             this.Name = "Form1";
@@ -325,6 +544,8 @@
             this.loginPagePanel.PerformLayout();
             this.signUpPagePanel.ResumeLayout(false);
             this.signUpPagePanel.PerformLayout();
+            this.enrollmentPanel.ResumeLayout(false);
+            this.enrollmentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -356,6 +577,26 @@
         private System.Windows.Forms.Button regSUBtn;
         private System.Windows.Forms.TextBox confirmPassSUTextBox;
         private System.Windows.Forms.Label confirmPassSULabel;
+        private System.Windows.Forms.Panel enrollmentPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel editProfileLinkLabel;
+        private System.Windows.Forms.Button deleteAllButton;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button addToCartButton;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Button deleteCourseButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RadioButton sCoursesRB;
+        private System.Windows.Forms.RadioButton jCoursesRB;
     }
 }
 

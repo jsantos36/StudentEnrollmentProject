@@ -20,6 +20,8 @@ namespace Project
         {
             InitializeComponent();
             signUpPagePanel.Visible = false;
+            enrollmentPanel.Visible = false;
+            loginPagePanel.Visible = true;
         }
 
         private void SignUpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -95,7 +97,9 @@ namespace Project
             if (myDT.Rows[0][0].ToString() == "1")
             {
                 mySQLConnection.Close();
-                MessageBox.Show("Proceed");
+                loginPagePanel.Visible = false;
+                signUpPagePanel.Visible = false;
+                enrollmentPanel.Visible = true;
             }
             else
             {
@@ -107,12 +111,12 @@ namespace Project
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            MessageBox.Show("A Clean one");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }
