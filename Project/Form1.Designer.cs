@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -37,6 +38,8 @@
             this.usernameLabel = new System.Windows.Forms.Label();
             this.loginPagePanel = new System.Windows.Forms.Panel();
             this.signUpPagePanel = new System.Windows.Forms.Panel();
+            this.majorComboBox = new System.Windows.Forms.ComboBox();
+            this.majorSULabel = new System.Windows.Forms.Label();
             this.confirmPassSUTextBox = new System.Windows.Forms.TextBox();
             this.confirmPassSULabel = new System.Windows.Forms.Label();
             this.backSUBtn = new System.Windows.Forms.Button();
@@ -55,10 +58,14 @@
             this.passwordSULabel = new System.Windows.Forms.Label();
             this.usernameSULabel = new System.Windows.Forms.Label();
             this.enrollmentPanel = new System.Windows.Forms.Panel();
+            this.jsCourseInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._JONMSSQLSERVER_DB01DataSet = new Project._JONMSSQLSERVER_DB01DataSet();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.majorLabel = new System.Windows.Forms.Label();
             this.fullNameLabel = new System.Windows.Forms.Label();
             this.sNumberLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.coursesComboBox = new System.Windows.Forms.ComboBox();
             this.sCoursesRB = new System.Windows.Forms.RadioButton();
             this.jCoursesRB = new System.Windows.Forms.RadioButton();
             this.deleteAllButton = new System.Windows.Forms.Button();
@@ -68,20 +75,20 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.deleteCourseButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.editProfileLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.majorSULabel = new System.Windows.Forms.Label();
-            this.majorComboBox = new System.Windows.Forms.ComboBox();
+            this.js_CourseInfoTableAdapter = new Project._JONMSSQLSERVER_DB01DataSetTableAdapters.js_CourseInfoTableAdapter();
             this.loginPagePanel.SuspendLayout();
             this.signUpPagePanel.SuspendLayout();
             this.enrollmentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // passwordLabel
@@ -157,7 +164,7 @@
             this.loginPagePanel.Controls.Add(this.passwordTextBox);
             this.loginPagePanel.Controls.Add(this.loginBtn);
             this.loginPagePanel.Controls.Add(this.usernameTextBox);
-            this.loginPagePanel.Location = new System.Drawing.Point(425, 185);
+            this.loginPagePanel.Location = new System.Drawing.Point(470, 201);
             this.loginPagePanel.Name = "loginPagePanel";
             this.loginPagePanel.Size = new System.Drawing.Size(312, 219);
             this.loginPagePanel.TabIndex = 7;
@@ -183,10 +190,34 @@
             this.signUpPagePanel.Controls.Add(this.fNameSULabel);
             this.signUpPagePanel.Controls.Add(this.passwordSULabel);
             this.signUpPagePanel.Controls.Add(this.usernameSULabel);
-            this.signUpPagePanel.Location = new System.Drawing.Point(366, 60);
+            this.signUpPagePanel.Location = new System.Drawing.Point(437, 82);
             this.signUpPagePanel.Name = "signUpPagePanel";
-            this.signUpPagePanel.Size = new System.Drawing.Size(432, 489);
+            this.signUpPagePanel.Size = new System.Drawing.Size(387, 489);
             this.signUpPagePanel.TabIndex = 8;
+            this.signUpPagePanel.Visible = false;
+            // 
+            // majorComboBox
+            // 
+            this.majorComboBox.FormattingEnabled = true;
+            this.majorComboBox.Items.AddRange(new object[] {
+            "Engineering",
+            "Business",
+            "Art",
+            "Fashion",
+            "Information Technology"});
+            this.majorComboBox.Location = new System.Drawing.Point(165, 358);
+            this.majorComboBox.Name = "majorComboBox";
+            this.majorComboBox.Size = new System.Drawing.Size(121, 21);
+            this.majorComboBox.TabIndex = 18;
+            // 
+            // majorSULabel
+            // 
+            this.majorSULabel.AutoSize = true;
+            this.majorSULabel.Location = new System.Drawing.Point(58, 358);
+            this.majorSULabel.Name = "majorSULabel";
+            this.majorSULabel.Size = new System.Drawing.Size(33, 13);
+            this.majorSULabel.TabIndex = 17;
+            this.majorSULabel.Text = "Major";
             // 
             // confirmPassSUTextBox
             // 
@@ -341,12 +372,12 @@
             // 
             // enrollmentPanel
             // 
+            this.enrollmentPanel.Controls.Add(this.dataGridView3);
+            this.enrollmentPanel.Controls.Add(this.dataGridView2);
             this.enrollmentPanel.Controls.Add(this.majorLabel);
-            this.enrollmentPanel.Controls.Add(this.signUpPagePanel);
-            this.enrollmentPanel.Controls.Add(this.loginPagePanel);
             this.enrollmentPanel.Controls.Add(this.fullNameLabel);
             this.enrollmentPanel.Controls.Add(this.sNumberLabel);
-            this.enrollmentPanel.Controls.Add(this.comboBox1);
+            this.enrollmentPanel.Controls.Add(this.coursesComboBox);
             this.enrollmentPanel.Controls.Add(this.sCoursesRB);
             this.enrollmentPanel.Controls.Add(this.jCoursesRB);
             this.enrollmentPanel.Controls.Add(this.deleteAllButton);
@@ -356,11 +387,8 @@
             this.enrollmentPanel.Controls.Add(this.splitter1);
             this.enrollmentPanel.Controls.Add(this.deleteCourseButton);
             this.enrollmentPanel.Controls.Add(this.label6);
-            this.enrollmentPanel.Controls.Add(this.listBox3);
             this.enrollmentPanel.Controls.Add(this.label5);
-            this.enrollmentPanel.Controls.Add(this.listBox2);
             this.enrollmentPanel.Controls.Add(this.label4);
-            this.enrollmentPanel.Controls.Add(this.listBox1);
             this.enrollmentPanel.Controls.Add(this.label3);
             this.enrollmentPanel.Controls.Add(this.label2);
             this.enrollmentPanel.Controls.Add(this.label1);
@@ -369,6 +397,35 @@
             this.enrollmentPanel.Name = "enrollmentPanel";
             this.enrollmentPanel.Size = new System.Drawing.Size(1139, 622);
             this.enrollmentPanel.TabIndex = 9;
+            this.enrollmentPanel.Visible = false;
+            // 
+            // jsCourseInfoBindingSource
+            // 
+            this.jsCourseInfoBindingSource.DataMember = "js_CourseInfo";
+            this.jsCourseInfoBindingSource.DataSource = this._JONMSSQLSERVER_DB01DataSet;
+            // 
+            // _JONMSSQLSERVER_DB01DataSet
+            // 
+            this._JONMSSQLSERVER_DB01DataSet.DataSetName = "_JONMSSQLSERVER_DB01DataSet";
+            this._JONMSSQLSERVER_DB01DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(628, 409);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(471, 168);
+            this.dataGridView3.TabIndex = 25;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(33, 135);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(471, 168);
+            this.dataGridView2.TabIndex = 24;
             // 
             // majorLabel
             // 
@@ -397,13 +454,19 @@
             this.sNumberLabel.TabIndex = 19;
             this.sNumberLabel.Text = "label7";
             // 
-            // comboBox1
+            // coursesComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(375, 377);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 18;
+            this.coursesComboBox.FormattingEnabled = true;
+            this.coursesComboBox.Items.AddRange(new object[] {
+            "Computer Science",
+            "Information Technology",
+            "Business",
+            "Art",
+            "All"});
+            this.coursesComboBox.Location = new System.Drawing.Point(375, 377);
+            this.coursesComboBox.Name = "coursesComboBox";
+            this.coursesComboBox.Size = new System.Drawing.Size(121, 21);
+            this.coursesComboBox.TabIndex = 18;
             // 
             // sCoursesRB
             // 
@@ -489,14 +552,6 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Course Shopping Cart";
             // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(628, 404);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(471, 173);
-            this.listBox3.TabIndex = 8;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -506,14 +561,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Available Courses:";
             // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(30, 404);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(471, 173);
-            this.listBox2.TabIndex = 6;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -522,14 +569,6 @@
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Courses Enrolled:";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(30, 130);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(471, 173);
-            this.listBox1.TabIndex = 4;
             // 
             // label3
             // 
@@ -568,28 +607,9 @@
             this.editProfileLinkLabel.TabStop = true;
             this.editProfileLinkLabel.Text = "Eidt Profile";
             // 
-            // majorSULabel
+            // js_CourseInfoTableAdapter
             // 
-            this.majorSULabel.AutoSize = true;
-            this.majorSULabel.Location = new System.Drawing.Point(58, 358);
-            this.majorSULabel.Name = "majorSULabel";
-            this.majorSULabel.Size = new System.Drawing.Size(33, 13);
-            this.majorSULabel.TabIndex = 17;
-            this.majorSULabel.Text = "Major";
-            // 
-            // majorComboBox
-            // 
-            this.majorComboBox.FormattingEnabled = true;
-            this.majorComboBox.Items.AddRange(new object[] {
-            "Engineering",
-            "Business",
-            "Art",
-            "Fashion",
-            "Information Technology"});
-            this.majorComboBox.Location = new System.Drawing.Point(165, 358);
-            this.majorComboBox.Name = "majorComboBox";
-            this.majorComboBox.Size = new System.Drawing.Size(121, 21);
-            this.majorComboBox.TabIndex = 18;
+            this.js_CourseInfoTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -597,6 +617,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1163, 637);
             this.Controls.Add(this.enrollmentPanel);
+            this.Controls.Add(this.loginPagePanel);
+            this.Controls.Add(this.signUpPagePanel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.loginPagePanel.ResumeLayout(false);
@@ -605,6 +627,10 @@
             this.signUpPagePanel.PerformLayout();
             this.enrollmentPanel.ResumeLayout(false);
             this.enrollmentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -646,14 +672,11 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Button deleteCourseButton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox coursesComboBox;
         private System.Windows.Forms.RadioButton sCoursesRB;
         private System.Windows.Forms.RadioButton jCoursesRB;
         private System.Windows.Forms.Label majorLabel;
@@ -661,6 +684,11 @@
         private System.Windows.Forms.Label sNumberLabel;
         private System.Windows.Forms.ComboBox majorComboBox;
         private System.Windows.Forms.Label majorSULabel;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private _JONMSSQLSERVER_DB01DataSet _JONMSSQLSERVER_DB01DataSet;
+        private System.Windows.Forms.BindingSource jsCourseInfoBindingSource;
+        private _JONMSSQLSERVER_DB01DataSetTableAdapters.js_CourseInfoTableAdapter js_CourseInfoTableAdapter;
     }
 }
 
