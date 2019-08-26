@@ -55,5 +55,13 @@ namespace Project
             studentNumber = fNameFirstInitial.ToLower() + lNameFirstInitial.ToLower() + "_" + studentNumberGenerated;
             return studentNumber;
         }
+
+        public void UnsortableColumn(DataGridView firstDGV)
+        {
+            foreach (DataGridViewColumn column in firstDGV.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
     }
 }

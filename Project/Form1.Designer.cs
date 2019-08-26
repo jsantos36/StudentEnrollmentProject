@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -58,8 +59,7 @@
             this.passwordSULabel = new System.Windows.Forms.Label();
             this.usernameSULabel = new System.Windows.Forms.Label();
             this.enrollmentPanel = new System.Windows.Forms.Panel();
-            this.jsCourseInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._JONMSSQLSERVER_DB01DataSet = new Project._JONMSSQLSERVER_DB01DataSet();
+            this.availCourseDGV = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.majorLabel = new System.Windows.Forms.Label();
@@ -81,14 +81,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.editProfileLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.jsCourseInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._JONMSSQLSERVER_DB01DataSet = new Project._JONMSSQLSERVER_DB01DataSet();
             this.js_CourseInfoTableAdapter = new Project._JONMSSQLSERVER_DB01DataSetTableAdapters.js_CourseInfoTableAdapter();
+            this.allCoursesRB = new System.Windows.Forms.RadioButton();
             this.loginPagePanel.SuspendLayout();
             this.signUpPagePanel.SuspendLayout();
             this.enrollmentPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.availCourseDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // passwordLabel
@@ -372,6 +376,8 @@
             // 
             // enrollmentPanel
             // 
+            this.enrollmentPanel.Controls.Add(this.allCoursesRB);
+            this.enrollmentPanel.Controls.Add(this.availCourseDGV);
             this.enrollmentPanel.Controls.Add(this.dataGridView3);
             this.enrollmentPanel.Controls.Add(this.dataGridView2);
             this.enrollmentPanel.Controls.Add(this.majorLabel);
@@ -393,27 +399,44 @@
             this.enrollmentPanel.Controls.Add(this.label2);
             this.enrollmentPanel.Controls.Add(this.label1);
             this.enrollmentPanel.Controls.Add(this.editProfileLinkLabel);
+            this.enrollmentPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.enrollmentPanel.Location = new System.Drawing.Point(12, 12);
             this.enrollmentPanel.Name = "enrollmentPanel";
             this.enrollmentPanel.Size = new System.Drawing.Size(1139, 622);
             this.enrollmentPanel.TabIndex = 9;
             this.enrollmentPanel.Visible = false;
             // 
-            // jsCourseInfoBindingSource
+            // availCourseDGV
             // 
-            this.jsCourseInfoBindingSource.DataMember = "js_CourseInfo";
-            this.jsCourseInfoBindingSource.DataSource = this._JONMSSQLSERVER_DB01DataSet;
-            // 
-            // _JONMSSQLSERVER_DB01DataSet
-            // 
-            this._JONMSSQLSERVER_DB01DataSet.DataSetName = "_JONMSSQLSERVER_DB01DataSet";
-            this._JONMSSQLSERVER_DB01DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.availCourseDGV.AllowUserToAddRows = false;
+            this.availCourseDGV.AllowUserToDeleteRows = false;
+            this.availCourseDGV.AllowUserToResizeColumns = false;
+            this.availCourseDGV.AllowUserToResizeRows = false;
+            this.availCourseDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.availCourseDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.availCourseDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.availCourseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.availCourseDGV.Location = new System.Drawing.Point(51, 409);
+            this.availCourseDGV.Name = "availCourseDGV";
+            this.availCourseDGV.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.availCourseDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.availCourseDGV.RowHeadersVisible = false;
+            this.availCourseDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.availCourseDGV.Size = new System.Drawing.Size(413, 168);
+            this.availCourseDGV.TabIndex = 26;
             // 
             // dataGridView3
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(628, 409);
+            this.dataGridView3.Location = new System.Drawing.Point(608, 409);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(471, 168);
             this.dataGridView3.TabIndex = 25;
@@ -463,7 +486,7 @@
             "Business",
             "Art",
             "All"});
-            this.coursesComboBox.Location = new System.Drawing.Point(375, 377);
+            this.coursesComboBox.Location = new System.Drawing.Point(343, 377);
             this.coursesComboBox.Name = "coursesComboBox";
             this.coursesComboBox.Size = new System.Drawing.Size(121, 21);
             this.coursesComboBox.TabIndex = 18;
@@ -471,28 +494,30 @@
             // sCoursesRB
             // 
             this.sCoursesRB.AutoSize = true;
-            this.sCoursesRB.Location = new System.Drawing.Point(249, 381);
+            this.sCoursesRB.Location = new System.Drawing.Point(207, 382);
             this.sCoursesRB.Name = "sCoursesRB";
-            this.sCoursesRB.Size = new System.Drawing.Size(96, 17);
+            this.sCoursesRB.Size = new System.Drawing.Size(58, 17);
             this.sCoursesRB.TabIndex = 17;
             this.sCoursesRB.TabStop = true;
-            this.sCoursesRB.Text = "Senior Courses";
+            this.sCoursesRB.Text = "Senior ";
             this.sCoursesRB.UseVisualStyleBackColor = true;
+            this.sCoursesRB.CheckedChanged += new System.EventHandler(this.SCoursesRB_CheckedChanged);
             // 
             // jCoursesRB
             // 
             this.jCoursesRB.AutoSize = true;
-            this.jCoursesRB.Location = new System.Drawing.Point(130, 381);
+            this.jCoursesRB.Location = new System.Drawing.Point(148, 382);
             this.jCoursesRB.Name = "jCoursesRB";
-            this.jCoursesRB.Size = new System.Drawing.Size(94, 17);
+            this.jCoursesRB.Size = new System.Drawing.Size(53, 17);
             this.jCoursesRB.TabIndex = 16;
             this.jCoursesRB.TabStop = true;
-            this.jCoursesRB.Text = "Junior Courses";
+            this.jCoursesRB.Text = "Junior";
             this.jCoursesRB.UseVisualStyleBackColor = true;
+            this.jCoursesRB.CheckedChanged += new System.EventHandler(this.JCoursesRB_CheckedChanged);
             // 
             // deleteAllButton
             // 
-            this.deleteAllButton.Location = new System.Drawing.Point(943, 583);
+            this.deleteAllButton.Location = new System.Drawing.Point(923, 583);
             this.deleteAllButton.Name = "deleteAllButton";
             this.deleteAllButton.Size = new System.Drawing.Size(75, 23);
             this.deleteAllButton.TabIndex = 15;
@@ -501,7 +526,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(1024, 583);
+            this.deleteButton.Location = new System.Drawing.Point(1004, 583);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 14;
@@ -510,7 +535,7 @@
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(530, 493);
+            this.removeButton.Location = new System.Drawing.Point(509, 488);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 13;
@@ -519,7 +544,7 @@
             // 
             // addToCartButton
             // 
-            this.addToCartButton.Location = new System.Drawing.Point(530, 449);
+            this.addToCartButton.Location = new System.Drawing.Point(509, 444);
             this.addToCartButton.Name = "addToCartButton";
             this.addToCartButton.Size = new System.Drawing.Size(75, 23);
             this.addToCartButton.TabIndex = 12;
@@ -546,7 +571,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(625, 386);
+            this.label6.Location = new System.Drawing.Point(605, 386);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 13);
             this.label6.TabIndex = 9;
@@ -555,7 +580,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 386);
+            this.label5.Location = new System.Drawing.Point(48, 386);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 7;
@@ -607,9 +632,31 @@
             this.editProfileLinkLabel.TabStop = true;
             this.editProfileLinkLabel.Text = "Eidt Profile";
             // 
+            // jsCourseInfoBindingSource
+            // 
+            this.jsCourseInfoBindingSource.DataMember = "js_CourseInfo";
+            this.jsCourseInfoBindingSource.DataSource = this._JONMSSQLSERVER_DB01DataSet;
+            // 
+            // _JONMSSQLSERVER_DB01DataSet
+            // 
+            this._JONMSSQLSERVER_DB01DataSet.DataSetName = "_JONMSSQLSERVER_DB01DataSet";
+            this._JONMSSQLSERVER_DB01DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // js_CourseInfoTableAdapter
             // 
             this.js_CourseInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // allCoursesRB
+            // 
+            this.allCoursesRB.AutoSize = true;
+            this.allCoursesRB.Location = new System.Drawing.Point(271, 381);
+            this.allCoursesRB.Name = "allCoursesRB";
+            this.allCoursesRB.Size = new System.Drawing.Size(36, 17);
+            this.allCoursesRB.TabIndex = 27;
+            this.allCoursesRB.TabStop = true;
+            this.allCoursesRB.Text = "All";
+            this.allCoursesRB.UseVisualStyleBackColor = true;
+            this.allCoursesRB.CheckedChanged += new System.EventHandler(this.AllCoursesRB_CheckedChanged);
             // 
             // Form1
             // 
@@ -627,10 +674,11 @@
             this.signUpPagePanel.PerformLayout();
             this.enrollmentPanel.ResumeLayout(false);
             this.enrollmentPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.availCourseDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -689,6 +737,8 @@
         private _JONMSSQLSERVER_DB01DataSet _JONMSSQLSERVER_DB01DataSet;
         private System.Windows.Forms.BindingSource jsCourseInfoBindingSource;
         private _JONMSSQLSERVER_DB01DataSetTableAdapters.js_CourseInfoTableAdapter js_CourseInfoTableAdapter;
+        private System.Windows.Forms.DataGridView availCourseDGV;
+        private System.Windows.Forms.RadioButton allCoursesRB;
     }
 }
 

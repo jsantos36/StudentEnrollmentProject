@@ -16,7 +16,8 @@ namespace Project
         private string gender;
         private string studentNumber;
         SqlConnection mySQLConnection = new SqlConnection(@"Data Source=DESKTOP-M4EARNV\JONMSSQLSERVER;Initial Catalog=JONMSSQLSERVER-DB01;Persist Security Info=True;User ID=sa;Password=Rantaro60!");
-
+        CleanUp cleanUp = new CleanUp();
+        SQLConnectionQueries sqlQueries = new SQLConnectionQueries();
         public Form1()
         {
             InitializeComponent();
@@ -59,8 +60,6 @@ namespace Project
 
         private void RegSUBtn_Click(object sender, EventArgs e)
         {
-            CleanUp cleanUp = new CleanUp();
-            SQLConnectionQueries sqlQueries = new SQLConnectionQueries();
             if (cleanUp.MatchField(passwordSUTextBox.Text, confirmPassSUTextBox.Text))
             {
                 if (cleanUp.EmptyField(usernameSUTextBox.Text))
@@ -87,12 +86,13 @@ namespace Project
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            SQLConnectionQueries sqlQueries = new SQLConnectionQueries();
             if (sqlQueries.AuthenticateLoginOne(usernameTextBox.Text, passwordTextBox.Text).Rows[0][0].ToString() == "1")
             {
                 sNumberLabel.Text = sqlQueries.AuthenticateLoginTwo(usernameTextBox.Text)["StudentNumber"].ToString();
                 fullNameLabel.Text = sqlQueries.AuthenticateLoginTwo(usernameTextBox.Text)["FirstName"].ToString() + " " + sqlQueries.AuthenticateLoginTwo(usernameTextBox.Text)["LastName"].ToString();
                 majorLabel.Text = sqlQueries.AuthenticateLoginTwo(usernameTextBox.Text)["Major"].ToString();
+                sqlQueries.DisplayAvailCourses(availCourseDGV);
+                cleanUp.UnsortableColumn(availCourseDGV);
                 loginPagePanel.Visible = false;
                 signUpPagePanel.Visible = false;
                 enrollmentPanel.Visible = true;
@@ -101,11 +101,27 @@ namespace Project
             {
                 MessageBox.Show("Please check your Username and Password");
             }
+            coursesComboBox.SelectedIndex = 4;
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void JCoursesRB_CheckedChanged(object sender, EventArgs e)
+        {
+            sqlQueries.DisplayAvailCoursesJunior(availCourseDGV);
+        }
+
+        private void SCoursesRB_CheckedChanged(object sender, EventArgs e)
+        {
+            sqlQueries.DisplayAvailCoursesSenior(availCourseDGV);
+        }
+
+        private void AllCoursesRB_CheckedChanged(object sender, EventArgs e)
+        {
+            sqlQueries.DisplayAvailCourses(availCourseDGV);
         }
     }
 }

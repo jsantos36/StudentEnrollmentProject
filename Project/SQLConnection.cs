@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace Project
 {
@@ -25,6 +26,7 @@ namespace Project
 
         public DataTable AuthenticateLoginOne(string firstString, string secondString)
         {
+            mySQLConnection.Close();
             mySQLConnection.Open();
             String mySQLQuery = ("Select Count(*) From js_LoginInfo where Username = '" + firstString + "' and Password = '" + secondString + "'");
             SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
@@ -43,6 +45,40 @@ namespace Project
             SqlDataReader myDataReaderLogin = mySQLCommand.ExecuteReader();
             myDataReaderLogin.Read();
             return myDataReaderLogin;
+        }
+
+        public void DisplayAvailCourses (DataGridView firstDGV)
+        {
+            mySQLConnection.Close();
+            mySQLConnection.Open();
+            String mySQLQuery = ("Select Code, Name, Major, Level from js_CourseInfo");
+            SqlDataAdapter sda = new SqlDataAdapter(mySQLQuery, mySQLConnection);
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+            firstDGV.DataSource = dataTable;
+            mySQLConnection.Close();
+        }
+
+        public void DisplayAvailCoursesJunior (DataGridView firstDGV)
+        {
+            mySQLConnection.Open();
+            String mySQLQuery = ("Select Code, Name, Major, Level from js_CourseInfo where Level = 'J'");
+            SqlDataAdapter mySqlSDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
+            DataTable dataTable = new DataTable();
+            mySqlSDA.Fill(dataTable);
+            firstDGV.DataSource = dataTable;
+            mySQLConnection.Close();
+        }
+
+        public void DisplayAvailCoursesSenior(DataGridView firstDGV)
+        {
+            mySQLConnection.Open();
+            String mySQLQuery = ("Select Code, Name, Major, Level from js_CourseInfo where Level = 'S'");
+            SqlDataAdapter mySqlSDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
+            DataTable dataTable = new DataTable();
+            mySqlSDA.Fill(dataTable);
+            firstDGV.DataSource = dataTable;
+            mySQLConnection.Close();
         }
     }
 }
