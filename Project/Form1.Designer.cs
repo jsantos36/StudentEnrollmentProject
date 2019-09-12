@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -59,9 +61,11 @@
             this.passwordSULabel = new System.Windows.Forms.Label();
             this.usernameSULabel = new System.Windows.Forms.Label();
             this.enrollmentPanel = new System.Windows.Forms.Panel();
+            this.courseCartDGV = new System.Windows.Forms.DataGridView();
+            this.totalCostLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.allCoursesRB = new System.Windows.Forms.RadioButton();
             this.availCourseDGV = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.majorLabel = new System.Windows.Forms.Label();
             this.fullNameLabel = new System.Windows.Forms.Label();
             this.sNumberLabel = new System.Windows.Forms.Label();
@@ -84,15 +88,17 @@
             this.jsCourseInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._JONMSSQLSERVER_DB01DataSet = new Project._JONMSSQLSERVER_DB01DataSet();
             this.js_CourseInfoTableAdapter = new Project._JONMSSQLSERVER_DB01DataSetTableAdapters.js_CourseInfoTableAdapter();
-            this.allCoursesRB = new System.Windows.Forms.RadioButton();
+            this.purchaseButton = new System.Windows.Forms.Button();
+            this.courseEnrollDGV = new System.Windows.Forms.DataGridView();
+            this.purchaseAllButton = new System.Windows.Forms.Button();
             this.loginPagePanel.SuspendLayout();
             this.signUpPagePanel.SuspendLayout();
             this.enrollmentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.courseCartDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.availCourseDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseEnrollDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // passwordLabel
@@ -376,10 +382,14 @@
             // 
             // enrollmentPanel
             // 
+            this.enrollmentPanel.Controls.Add(this.purchaseAllButton);
+            this.enrollmentPanel.Controls.Add(this.courseEnrollDGV);
+            this.enrollmentPanel.Controls.Add(this.purchaseButton);
+            this.enrollmentPanel.Controls.Add(this.courseCartDGV);
+            this.enrollmentPanel.Controls.Add(this.totalCostLabel);
+            this.enrollmentPanel.Controls.Add(this.label7);
             this.enrollmentPanel.Controls.Add(this.allCoursesRB);
             this.enrollmentPanel.Controls.Add(this.availCourseDGV);
-            this.enrollmentPanel.Controls.Add(this.dataGridView3);
-            this.enrollmentPanel.Controls.Add(this.dataGridView2);
             this.enrollmentPanel.Controls.Add(this.majorLabel);
             this.enrollmentPanel.Controls.Add(this.fullNameLabel);
             this.enrollmentPanel.Controls.Add(this.sNumberLabel);
@@ -402,9 +412,66 @@
             this.enrollmentPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.enrollmentPanel.Location = new System.Drawing.Point(12, 12);
             this.enrollmentPanel.Name = "enrollmentPanel";
-            this.enrollmentPanel.Size = new System.Drawing.Size(1139, 622);
+            this.enrollmentPanel.Size = new System.Drawing.Size(1139, 630);
             this.enrollmentPanel.TabIndex = 9;
             this.enrollmentPanel.Visible = false;
+            // 
+            // courseCartDGV
+            // 
+            this.courseCartDGV.AllowUserToAddRows = false;
+            this.courseCartDGV.AllowUserToDeleteRows = false;
+            this.courseCartDGV.AllowUserToResizeColumns = false;
+            this.courseCartDGV.AllowUserToResizeRows = false;
+            this.courseCartDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.courseCartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.courseCartDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.courseCartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.courseCartDGV.Location = new System.Drawing.Point(643, 403);
+            this.courseCartDGV.Name = "courseCartDGV";
+            this.courseCartDGV.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.courseCartDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.courseCartDGV.RowHeadersVisible = false;
+            this.courseCartDGV.RowHeadersWidth = 62;
+            this.courseCartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.courseCartDGV.Size = new System.Drawing.Size(468, 168);
+            this.courseCartDGV.TabIndex = 31;
+            // 
+            // totalCostLabel
+            // 
+            this.totalCostLabel.AutoSize = true;
+            this.totalCostLabel.Location = new System.Drawing.Point(677, 579);
+            this.totalCostLabel.Name = "totalCostLabel";
+            this.totalCostLabel.Size = new System.Drawing.Size(34, 13);
+            this.totalCostLabel.TabIndex = 30;
+            this.totalCostLabel.Text = "$0.00";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(641, 579);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Total: ";
+            // 
+            // allCoursesRB
+            // 
+            this.allCoursesRB.AutoSize = true;
+            this.allCoursesRB.Location = new System.Drawing.Point(261, 382);
+            this.allCoursesRB.Name = "allCoursesRB";
+            this.allCoursesRB.Size = new System.Drawing.Size(36, 17);
+            this.allCoursesRB.TabIndex = 27;
+            this.allCoursesRB.TabStop = true;
+            this.allCoursesRB.Text = "All";
+            this.allCoursesRB.UseVisualStyleBackColor = true;
+            this.allCoursesRB.CheckedChanged += new System.EventHandler(this.AllCoursesRB_CheckedChanged);
             // 
             // availCourseDGV
             // 
@@ -416,39 +483,22 @@
             this.availCourseDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.availCourseDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.availCourseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.availCourseDGV.Location = new System.Drawing.Point(51, 409);
+            this.availCourseDGV.Location = new System.Drawing.Point(39, 403);
             this.availCourseDGV.Name = "availCourseDGV";
             this.availCourseDGV.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.availCourseDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.availCourseDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.availCourseDGV.RowHeadersVisible = false;
+            this.availCourseDGV.RowHeadersWidth = 62;
             this.availCourseDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.availCourseDGV.Size = new System.Drawing.Size(413, 168);
+            this.availCourseDGV.Size = new System.Drawing.Size(468, 168);
             this.availCourseDGV.TabIndex = 26;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(608, 409);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(471, 168);
-            this.dataGridView3.TabIndex = 25;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(33, 135);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(471, 168);
-            this.dataGridView2.TabIndex = 24;
             // 
             // majorLabel
             // 
@@ -486,15 +536,16 @@
             "Business",
             "Art",
             "All"});
-            this.coursesComboBox.Location = new System.Drawing.Point(343, 377);
+            this.coursesComboBox.Location = new System.Drawing.Point(386, 376);
             this.coursesComboBox.Name = "coursesComboBox";
             this.coursesComboBox.Size = new System.Drawing.Size(121, 21);
             this.coursesComboBox.TabIndex = 18;
+            this.coursesComboBox.SelectedIndexChanged += new System.EventHandler(this.CoursesComboBox_SelectedIndexChanged);
             // 
             // sCoursesRB
             // 
             this.sCoursesRB.AutoSize = true;
-            this.sCoursesRB.Location = new System.Drawing.Point(207, 382);
+            this.sCoursesRB.Location = new System.Drawing.Point(197, 383);
             this.sCoursesRB.Name = "sCoursesRB";
             this.sCoursesRB.Size = new System.Drawing.Size(58, 17);
             this.sCoursesRB.TabIndex = 17;
@@ -506,7 +557,7 @@
             // jCoursesRB
             // 
             this.jCoursesRB.AutoSize = true;
-            this.jCoursesRB.Location = new System.Drawing.Point(148, 382);
+            this.jCoursesRB.Location = new System.Drawing.Point(138, 383);
             this.jCoursesRB.Name = "jCoursesRB";
             this.jCoursesRB.Size = new System.Drawing.Size(53, 17);
             this.jCoursesRB.TabIndex = 16;
@@ -517,51 +568,55 @@
             // 
             // deleteAllButton
             // 
-            this.deleteAllButton.Location = new System.Drawing.Point(923, 583);
+            this.deleteAllButton.Location = new System.Drawing.Point(955, 577);
             this.deleteAllButton.Name = "deleteAllButton";
             this.deleteAllButton.Size = new System.Drawing.Size(75, 23);
             this.deleteAllButton.TabIndex = 15;
             this.deleteAllButton.Text = "Delete All";
             this.deleteAllButton.UseVisualStyleBackColor = true;
+            this.deleteAllButton.Click += new System.EventHandler(this.DeleteAllButton_Click);
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(1004, 583);
+            this.deleteButton.Location = new System.Drawing.Point(1037, 577);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 14;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(509, 488);
+            this.removeButton.Location = new System.Drawing.Point(542, 483);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 13;
             this.removeButton.Text = "Remove ";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // addToCartButton
             // 
-            this.addToCartButton.Location = new System.Drawing.Point(509, 444);
+            this.addToCartButton.Location = new System.Drawing.Point(542, 439);
             this.addToCartButton.Name = "addToCartButton";
             this.addToCartButton.Size = new System.Drawing.Size(75, 23);
             this.addToCartButton.TabIndex = 12;
             this.addToCartButton.Text = "Add to Cart >";
             this.addToCartButton.UseVisualStyleBackColor = true;
+            this.addToCartButton.Click += new System.EventHandler(this.AddToCartButton_Click);
             // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 622);
+            this.splitter1.Size = new System.Drawing.Size(3, 630);
             this.splitter1.TabIndex = 11;
             this.splitter1.TabStop = false;
             // 
             // deleteCourseButton
             // 
-            this.deleteCourseButton.Location = new System.Drawing.Point(425, 309);
+            this.deleteCourseButton.Location = new System.Drawing.Point(432, 308);
             this.deleteCourseButton.Name = "deleteCourseButton";
             this.deleteCourseButton.Size = new System.Drawing.Size(75, 23);
             this.deleteCourseButton.TabIndex = 10;
@@ -571,7 +626,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(605, 386);
+            this.label6.Location = new System.Drawing.Point(640, 385);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 13);
             this.label6.TabIndex = 9;
@@ -580,7 +635,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 386);
+            this.label5.Location = new System.Drawing.Point(38, 387);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 7;
@@ -589,7 +644,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 113);
+            this.label4.Location = new System.Drawing.Point(36, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 5;
@@ -646,17 +701,52 @@
             // 
             this.js_CourseInfoTableAdapter.ClearBeforeFill = true;
             // 
-            // allCoursesRB
+            // purchaseButton
             // 
-            this.allCoursesRB.AutoSize = true;
-            this.allCoursesRB.Location = new System.Drawing.Point(271, 381);
-            this.allCoursesRB.Name = "allCoursesRB";
-            this.allCoursesRB.Size = new System.Drawing.Size(36, 17);
-            this.allCoursesRB.TabIndex = 27;
-            this.allCoursesRB.TabStop = true;
-            this.allCoursesRB.Text = "All";
-            this.allCoursesRB.UseVisualStyleBackColor = true;
-            this.allCoursesRB.CheckedChanged += new System.EventHandler(this.AllCoursesRB_CheckedChanged);
+            this.purchaseButton.Location = new System.Drawing.Point(746, 574);
+            this.purchaseButton.Name = "purchaseButton";
+            this.purchaseButton.Size = new System.Drawing.Size(75, 23);
+            this.purchaseButton.TabIndex = 32;
+            this.purchaseButton.Text = "Purchase";
+            this.purchaseButton.UseVisualStyleBackColor = true;
+            this.purchaseButton.Click += new System.EventHandler(this.PurchaseButton_Click);
+            // 
+            // courseEnrollDGV
+            // 
+            this.courseEnrollDGV.AllowUserToAddRows = false;
+            this.courseEnrollDGV.AllowUserToDeleteRows = false;
+            this.courseEnrollDGV.AllowUserToResizeColumns = false;
+            this.courseEnrollDGV.AllowUserToResizeRows = false;
+            this.courseEnrollDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.courseEnrollDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.courseEnrollDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.courseEnrollDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.courseEnrollDGV.Location = new System.Drawing.Point(39, 135);
+            this.courseEnrollDGV.Name = "courseEnrollDGV";
+            this.courseEnrollDGV.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.courseEnrollDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.courseEnrollDGV.RowHeadersVisible = false;
+            this.courseEnrollDGV.RowHeadersWidth = 62;
+            this.courseEnrollDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.courseEnrollDGV.Size = new System.Drawing.Size(468, 168);
+            this.courseEnrollDGV.TabIndex = 33;
+            // 
+            // purchaseAllButton
+            // 
+            this.purchaseAllButton.Location = new System.Drawing.Point(827, 574);
+            this.purchaseAllButton.Name = "purchaseAllButton";
+            this.purchaseAllButton.Size = new System.Drawing.Size(75, 23);
+            this.purchaseAllButton.TabIndex = 34;
+            this.purchaseAllButton.Text = "Purchase All";
+            this.purchaseAllButton.UseVisualStyleBackColor = true;
+            this.purchaseAllButton.Click += new System.EventHandler(this.PurchaseAllButton_Click);
             // 
             // Form1
             // 
@@ -674,11 +764,11 @@
             this.signUpPagePanel.PerformLayout();
             this.enrollmentPanel.ResumeLayout(false);
             this.enrollmentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.courseCartDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.availCourseDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseEnrollDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -732,13 +822,17 @@
         private System.Windows.Forms.Label sNumberLabel;
         private System.Windows.Forms.ComboBox majorComboBox;
         private System.Windows.Forms.Label majorSULabel;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private _JONMSSQLSERVER_DB01DataSet _JONMSSQLSERVER_DB01DataSet;
         private System.Windows.Forms.BindingSource jsCourseInfoBindingSource;
         private _JONMSSQLSERVER_DB01DataSetTableAdapters.js_CourseInfoTableAdapter js_CourseInfoTableAdapter;
         private System.Windows.Forms.DataGridView availCourseDGV;
         private System.Windows.Forms.RadioButton allCoursesRB;
+        private System.Windows.Forms.Label totalCostLabel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView courseCartDGV;
+        private System.Windows.Forms.Button purchaseButton;
+        private System.Windows.Forms.DataGridView courseEnrollDGV;
+        private System.Windows.Forms.Button purchaseAllButton;
     }
 }
 
