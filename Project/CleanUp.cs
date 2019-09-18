@@ -13,7 +13,7 @@ namespace Project
 {
    public class CleanUp
     {
-        public bool MatchField(string firstString, string secondString)
+        public bool IsFieldMatch(string firstString, string secondString)
         {
             bool b = true;
             if (firstString != secondString)
@@ -25,7 +25,7 @@ namespace Project
                 return b;
         }
 
-        public bool EmptyField(string firstString)
+        public bool IsFieldEmpty(string firstString)
         {
             bool b = true;
             if (String.IsNullOrWhiteSpace(firstString))
@@ -37,7 +37,7 @@ namespace Project
                 return b;
         }
 
-        public string StudentNumberGenerator (string firstString, string secondString)
+        public string GenerateStudentNumber (string firstString, string secondString)
         {
             string fNameFirstInitial;
             string lNameFirstInitial;
@@ -62,6 +62,23 @@ namespace Project
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+        }
+
+        public void SetColumnWidth (DataGridView firstDGV)
+        {
+            DataGridViewColumn columnZero, columnOne, columnTwo, columnThree, columnFour;
+
+            columnZero = firstDGV.Columns[0];
+            columnOne = firstDGV.Columns[1];
+            columnTwo = firstDGV.Columns[2];
+            columnThree = firstDGV.Columns[3];
+            columnFour = firstDGV.Columns[4];
+
+            columnZero.Width = 55;
+            columnOne.Width = 180;
+            columnTwo.Width = 120;
+            columnThree.Width = 40;
+            columnFour.Width = 52;
         }
     }
 }

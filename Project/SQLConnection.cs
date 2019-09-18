@@ -15,102 +15,73 @@ namespace Project
     public class SQLConnectionQueries
     {
         SqlConnection mySQLConnection = new SqlConnection(@"Data Source=DESKTOP-M4EARNV\JONMSSQLSERVER;Initial Catalog=JONMSSQLSERVER-DB01;Persist Security Info=True;User ID=sa;Password=Rantaro60!");
-
-        public void InsertLoginInfo(string firstString, string secondString, string thirdString, string fourthString, string fifthString, string sixthString, string seventhString, string eighthString, string ninthString)
+        
+        public void InsertTable(string query)
         {
+            mySQLConnection.Close();
             mySQLConnection.Open();
-            String mySQLQuery = ("INSERT INTO js_LoginInfo (Username,Password,ConfirmPassword,FirstName,LastName,Email,Gender,StudentNumber,Major) VALUES ('" + firstString + "', '" + secondString + "','" + thirdString + "','" + fourthString + "'," + "'" + fifthString + "','" + sixthString + "','" + seventhString + "', '" + eighthString + "', '" + ninthString + "')");
-            SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
+            SqlDataAdapter mySDA = new SqlDataAdapter(query, mySQLConnection);
             mySDA.SelectCommand.ExecuteNonQuery();
         }
 
-        public DataTable DoesUserExist(string firstString, string secondString)
+        public void DisplayTable(DataGridView firstDGV, string query)
         {
             mySQLConnection.Close();
             mySQLConnection.Open();
-            String mySQLQuery = ("Select Count(*) From js_LoginInfo where Username = '" + firstString + "' and Password = '" + secondString + "'");
-            SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
-            DataTable myDT = new DataTable();
-            mySDA.Fill(myDT);
-            mySQLConnection.Close();
-            return myDT;
-        }
-
-        public SqlDataReader AuthenticateLoginTwo(string firstString)
-        {
-            mySQLConnection.Close();
-            mySQLConnection.Open();
-            String mySQLQueryLogin = ("Select * From js_LoginInfo where Username = '" + firstString + "'");
-            SqlCommand mySQLCommand = new SqlCommand(mySQLQueryLogin, mySQLConnection);
-            SqlDataReader myDataReaderLogin = mySQLCommand.ExecuteReader();
-            myDataReaderLogin.Read();
-            return myDataReaderLogin;
-        }
-
-        public void DisplayAvailCourses(DataGridView firstDGV)
-        {
-            mySQLConnection.Close();
-            mySQLConnection.Open();
-            String mySQLQuery = ("Select Code, Name, Major, Level , Cost from js_CourseInfo");
-            SqlDataAdapter sda = new SqlDataAdapter(mySQLQuery, mySQLConnection);
+            SqlDataAdapter sda = new SqlDataAdapter(query, mySQLConnection);
             DataTable dataTable = new DataTable();
             sda.Fill(dataTable);
             firstDGV.DataSource = dataTable;
-            mySQLConnection.Close();
         }
 
-        public void DisplayAvailCourses(DataGridView firstDGV, string firstString, string secondString)
-        {
-            mySQLConnection.Open();
-            String mySQLQuery = ("Select Code, Name, Major, Level from js_CourseInfo where " + firstString + " and Major " + secondString + "");
-            SqlDataAdapter mySqlSDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
-            DataTable dataTable = new DataTable();
-            mySqlSDA.Fill(dataTable);
-            firstDGV.DataSource = dataTable;
-            mySQLConnection.Close();
-        }
-
-        public void AddToCart(string firstString, string secondString, string thirdString, string fourthString, string fifthString, string sixthString)
+        public DataTable DoesRecordExist(string query)
         {
             mySQLConnection.Close();
             mySQLConnection.Open();
-            String mySQLQuery = ("INSERT INTO js_CourseCart VALUES ('" + firstString + "', '" + secondString + "','" + thirdString + "','" + fourthString + "'," + "'" + fifthString + "','" + sixthString + "' ,'')");
-            SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
-            mySDA.SelectCommand.ExecuteNonQuery();
-            String mySQLQueryCost = ("UPDATE js_CourseCart SET Cost = (SELECT cost FROM js_CourseInfo WHERE Username = '" + firstString + "' and Code = '" + thirdString + "') WHERE Username = '" + firstString + "' and Code = '" + thirdString + "'");
-            SqlDataAdapter mySDACost = new SqlDataAdapter(mySQLQueryCost, mySQLConnection);
-            mySDACost.SelectCommand.ExecuteNonQuery();
-        }
-
-        public DataTable AddToCartValidate(string firstString, string secondString)
-        {
-            mySQLConnection.Close();
-            mySQLConnection.Open();
-            String mySQLQuery = ("Select Count(*) From js_CourseCart where Username = '" + firstString + "' and Code = '" + secondString + "'");
-            SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
+            SqlDataAdapter mySDA = new SqlDataAdapter(query, mySQLConnection);
             DataTable myDT = new DataTable();
             mySDA.Fill(myDT);
-            mySQLConnection.Close();
             return myDT;
         }
 
-        public void DisplayCartCourses (DataGridView firstDGV, string firstString)
+        public SqlDataReader ReadTableAndColumnOnce(string query)
         {
             mySQLConnection.Close();
             mySQLConnection.Open();
-            String mySQLQuery = ("Select Code, Name, Major, Level, Cost from js_CourseCart where Username = '" + firstString + "'");
-            SqlDataAdapter mySqlSDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
-            DataTable dataTable = new DataTable();
-            mySqlSDA.Fill(dataTable);
-            firstDGV.DataSource = dataTable;
-            mySQLConnection.Close();
+            SqlCommand mySQLCommand = new SqlCommand(query, mySQLConnection);
+            SqlDataReader dataReader = mySQLCommand.ExecuteReader();
+            dataReader.Read();
+            return dataReader;
         }
 
-        public void DeleteCourse(string firstString)
+        public List<string> ReadTableAndColumnMultiple(string query, string columnName, List<string> listString)
         {
             mySQLConnection.Close();
             mySQLConnection.Open();
-            SqlDataAdapter mySqlSDA = new SqlDataAdapter(firstString, mySQLConnection);
+            SqlCommand mySQLCommand = new SqlCommand(query, mySQLConnection);
+            SqlDataReader dataReader = mySQLCommand.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                string codeFromQuery = (dataReader)[columnName].ToString();
+                listString.Add(codeFromQuery);
+            }
+            return listString;
+        }
+
+        public void UpdateTable(string query)
+        {
+            mySQLConnection.Close();
+            mySQLConnection.Open();
+            SqlDataAdapter mySDACost = new SqlDataAdapter(query, mySQLConnection);
+            mySDACost.SelectCommand.ExecuteNonQuery();
+        }
+
+        public void DeleteTable(string query)
+        {
+            mySQLConnection.Close();
+            mySQLConnection.Open();
+            SqlDataAdapter mySqlSDA = new SqlDataAdapter(query, mySQLConnection);
             mySqlSDA.SelectCommand.ExecuteNonQuery();
         }
 
@@ -118,8 +89,10 @@ namespace Project
         {
             double initialValue = 0;
             double totalValue = 0;
+
             mySQLConnection.Close();
             mySQLConnection.Open();
+
             String mySqlQuery = ("Select Cost from js_CourseCart");
             SqlCommand mySQLCommand = new SqlCommand(mySqlQuery, mySQLConnection);
             SqlDataReader myDataReader = mySQLCommand.ExecuteReader();
@@ -132,37 +105,45 @@ namespace Project
             return totalValue;
         }
 
-        public void PurchaseSingleCourse(string firstString, string secondString, string thirdString, string fourthString, string fifthString, string sixthString, DateTime dateTime)
+        public void RadioButtonFilter (string comboBoxText, string level, DataGridView firstDGV)
         {
-            mySQLConnection.Close();
-            mySQLConnection.Open();
-            String mySQLQuery = ("INSERT INTO js_CourseEnrolled (Username,StudentNumber,Code,Name,Major,Level,PurchaseTime) VALUES ('" + firstString + "', '" + secondString + "','" + thirdString + "','" + fourthString + "','" + fifthString + "','" + sixthString + "','"+ dateTime +"')");
-            SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
-            mySDA.SelectCommand.ExecuteNonQuery();
+            SQLConnectionQueries sqlConnectionQueries = new SQLConnectionQueries();
+
+            string major, query;
+            major = "= '" + comboBoxText + "'";
+            query = ("Select Code, Name, Major, Level, Cost from js_CourseInfo where (Level = '" + level + "') and Major " + major + "");
+
+            if (comboBoxText == "All")
+            {
+                major = "is not null";
+                query = ("Select Code, Name, Major, Level, Cost from js_CourseInfo where (Level = '" + level + "') and Major " + major + "");
+                sqlConnectionQueries.DisplayTable(firstDGV, query);
+            }
+            else
+            {
+                sqlConnectionQueries.DisplayTable(firstDGV, query);
+            }
         }
 
-        public void DisplayEnrolledCourses(DataGridView firstDGV, string firstString)
+        public void ComboBoxSelectionFilter(RadioButton allCourse, RadioButton jCourse, RadioButton sCourse, string comboBoxText, DataGridView firstDGV)
         {
-            mySQLConnection.Close();
-            mySQLConnection.Open();
-            String mySQLQuery = ("Select Code, Name, Major, Level, PurchaseTime from js_CourseEnrolled where Username = '" + firstString + "'");
-            SqlDataAdapter mySqlSDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
-            DataTable dataTable = new DataTable();
-            mySqlSDA.Fill(dataTable);
-            firstDGV.DataSource = dataTable;
-            mySQLConnection.Close();
-        }
+            SQLConnectionQueries sqlConnectionQueries = new SQLConnectionQueries();
 
-        public DataTable Validate(string firstString, string secondString)
-        {
-            mySQLConnection.Close();
-            mySQLConnection.Open();
-            String mySQLQuery = ("Select Count(*) From js_CourseEnrolled where Username = '" + firstString + "' and Code = '" + secondString + "'");
-            SqlDataAdapter mySDA = new SqlDataAdapter(mySQLQuery, mySQLConnection);
-            DataTable myDT = new DataTable();
-            mySDA.Fill(myDT);
-            mySQLConnection.Close();
-            return myDT;
+            if (allCourse.Checked == true)
+            {
+                string level = "J' or Level = 'S";
+                sqlConnectionQueries.RadioButtonFilter(comboBoxText, level, firstDGV);
+            }
+            else if (jCourse.Checked == true)
+            {
+                string level = "J";
+                sqlConnectionQueries.RadioButtonFilter(comboBoxText, level, firstDGV);
+            }
+            else if (sCourse.Checked == true)
+            {
+                string level = "S";
+                sqlConnectionQueries.RadioButtonFilter(comboBoxText, level, firstDGV);
+            }
         }
     }
 }

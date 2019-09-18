@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -61,6 +61,21 @@
             this.passwordSULabel = new System.Windows.Forms.Label();
             this.usernameSULabel = new System.Windows.Forms.Label();
             this.enrollmentPanel = new System.Windows.Forms.Panel();
+            this.enrollmentBackButton = new System.Windows.Forms.Button();
+            this.courseDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.professorRatingLabel = new System.Windows.Forms.Label();
+            this.professorLabel = new System.Windows.Forms.Label();
+            this.courseNameLabel = new System.Windows.Forms.Label();
+            this.courseCodeLabel = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.deleteAllButtonCourseEnrolled = new System.Windows.Forms.Button();
+            this.purchaseAllButton = new System.Windows.Forms.Button();
+            this.courseEnrollDGV = new System.Windows.Forms.DataGridView();
+            this.purchaseButton = new System.Windows.Forms.Button();
             this.courseCartDGV = new System.Windows.Forms.DataGridView();
             this.totalCostLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -72,12 +87,12 @@
             this.coursesComboBox = new System.Windows.Forms.ComboBox();
             this.sCoursesRB = new System.Windows.Forms.RadioButton();
             this.jCoursesRB = new System.Windows.Forms.RadioButton();
-            this.deleteAllButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
+            this.deleteAllButtonCourseCart = new System.Windows.Forms.Button();
+            this.deleteButtonCourseCart = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.addToCartButton = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.deleteCourseButton = new System.Windows.Forms.Button();
+            this.deleteButtonCourseEnrolled = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -85,20 +100,38 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.editProfileLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.editProfilePanel = new System.Windows.Forms.Panel();
+            this.majorEPComboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.confirmPassEPTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.backEPButton = new System.Windows.Forms.Button();
+            this.updateEPButton = new System.Windows.Forms.Button();
+            this.femaleEPRB = new System.Windows.Forms.RadioButton();
+            this.maleEPRB = new System.Windows.Forms.RadioButton();
+            this.emailEPTextBox = new System.Windows.Forms.TextBox();
+            this.lNameEPTextBox = new System.Windows.Forms.TextBox();
+            this.fNameEPTextBox = new System.Windows.Forms.TextBox();
+            this.passwordEPTextBox = new System.Windows.Forms.TextBox();
+            this.usernameEPTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.jsCourseInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._JONMSSQLSERVER_DB01DataSet = new Project._JONMSSQLSERVER_DB01DataSet();
             this.js_CourseInfoTableAdapter = new Project._JONMSSQLSERVER_DB01DataSetTableAdapters.js_CourseInfoTableAdapter();
-            this.purchaseButton = new System.Windows.Forms.Button();
-            this.courseEnrollDGV = new System.Windows.Forms.DataGridView();
-            this.purchaseAllButton = new System.Windows.Forms.Button();
             this.loginPagePanel.SuspendLayout();
             this.signUpPagePanel.SuspendLayout();
             this.enrollmentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.courseEnrollDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseCartDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.availCourseDGV)).BeginInit();
+            this.editProfilePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseEnrollDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // passwordLabel
@@ -174,9 +207,9 @@
             this.loginPagePanel.Controls.Add(this.passwordTextBox);
             this.loginPagePanel.Controls.Add(this.loginBtn);
             this.loginPagePanel.Controls.Add(this.usernameTextBox);
-            this.loginPagePanel.Location = new System.Drawing.Point(470, 201);
+            this.loginPagePanel.Location = new System.Drawing.Point(464, 202);
             this.loginPagePanel.Name = "loginPagePanel";
-            this.loginPagePanel.Size = new System.Drawing.Size(312, 219);
+            this.loginPagePanel.Size = new System.Drawing.Size(303, 219);
             this.loginPagePanel.TabIndex = 7;
             // 
             // signUpPagePanel
@@ -200,7 +233,7 @@
             this.signUpPagePanel.Controls.Add(this.fNameSULabel);
             this.signUpPagePanel.Controls.Add(this.passwordSULabel);
             this.signUpPagePanel.Controls.Add(this.usernameSULabel);
-            this.signUpPagePanel.Location = new System.Drawing.Point(437, 82);
+            this.signUpPagePanel.Location = new System.Drawing.Point(419, 62);
             this.signUpPagePanel.Name = "signUpPagePanel";
             this.signUpPagePanel.Size = new System.Drawing.Size(387, 489);
             this.signUpPagePanel.TabIndex = 8;
@@ -213,12 +246,12 @@
             "Engineering",
             "Business",
             "Art",
-            "Fashion",
+            "Computer Science",
             "Information Technology"});
             this.majorComboBox.Location = new System.Drawing.Point(165, 358);
             this.majorComboBox.Name = "majorComboBox";
             this.majorComboBox.Size = new System.Drawing.Size(121, 21);
-            this.majorComboBox.TabIndex = 18;
+            this.majorComboBox.TabIndex = 14;
             // 
             // majorSULabel
             // 
@@ -235,7 +268,7 @@
             this.confirmPassSUTextBox.Name = "confirmPassSUTextBox";
             this.confirmPassSUTextBox.PasswordChar = '*';
             this.confirmPassSUTextBox.Size = new System.Drawing.Size(187, 20);
-            this.confirmPassSUTextBox.TabIndex = 16;
+            this.confirmPassSUTextBox.TabIndex = 8;
             // 
             // confirmPassSULabel
             // 
@@ -251,7 +284,7 @@
             this.backSUBtn.Location = new System.Drawing.Point(278, 402);
             this.backSUBtn.Name = "backSUBtn";
             this.backSUBtn.Size = new System.Drawing.Size(75, 24);
-            this.backSUBtn.TabIndex = 14;
+            this.backSUBtn.TabIndex = 16;
             this.backSUBtn.Text = "Back";
             this.backSUBtn.UseVisualStyleBackColor = true;
             this.backSUBtn.Click += new System.EventHandler(this.BackSUBtn_Click);
@@ -261,7 +294,7 @@
             this.regSUBtn.Location = new System.Drawing.Point(197, 402);
             this.regSUBtn.Name = "regSUBtn";
             this.regSUBtn.Size = new System.Drawing.Size(75, 24);
-            this.regSUBtn.TabIndex = 13;
+            this.regSUBtn.TabIndex = 15;
             this.regSUBtn.Text = "Register";
             this.regSUBtn.UseVisualStyleBackColor = true;
             this.regSUBtn.Click += new System.EventHandler(this.RegSUBtn_Click);
@@ -272,7 +305,7 @@
             this.femaleSURB.Location = new System.Drawing.Point(219, 321);
             this.femaleSURB.Name = "femaleSURB";
             this.femaleSURB.Size = new System.Drawing.Size(59, 17);
-            this.femaleSURB.TabIndex = 12;
+            this.femaleSURB.TabIndex = 13;
             this.femaleSURB.TabStop = true;
             this.femaleSURB.Text = "Female";
             this.femaleSURB.UseVisualStyleBackColor = true;
@@ -284,7 +317,7 @@
             this.maleSURB.Location = new System.Drawing.Point(165, 321);
             this.maleSURB.Name = "maleSURB";
             this.maleSURB.Size = new System.Drawing.Size(48, 17);
-            this.maleSURB.TabIndex = 11;
+            this.maleSURB.TabIndex = 12;
             this.maleSURB.TabStop = true;
             this.maleSURB.Text = "Male";
             this.maleSURB.UseVisualStyleBackColor = true;
@@ -295,21 +328,21 @@
             this.emailSUTextBox.Location = new System.Drawing.Point(166, 278);
             this.emailSUTextBox.Name = "emailSUTextBox";
             this.emailSUTextBox.Size = new System.Drawing.Size(187, 20);
-            this.emailSUTextBox.TabIndex = 10;
+            this.emailSUTextBox.TabIndex = 11;
             // 
             // lNameSUTextBox
             // 
             this.lNameSUTextBox.Location = new System.Drawing.Point(166, 236);
             this.lNameSUTextBox.Name = "lNameSUTextBox";
             this.lNameSUTextBox.Size = new System.Drawing.Size(187, 20);
-            this.lNameSUTextBox.TabIndex = 9;
+            this.lNameSUTextBox.TabIndex = 10;
             // 
             // fNameSUTextBox
             // 
             this.fNameSUTextBox.Location = new System.Drawing.Point(165, 196);
             this.fNameSUTextBox.Name = "fNameSUTextBox";
             this.fNameSUTextBox.Size = new System.Drawing.Size(187, 20);
-            this.fNameSUTextBox.TabIndex = 8;
+            this.fNameSUTextBox.TabIndex = 9;
             // 
             // passwordSUTextBox
             // 
@@ -382,6 +415,18 @@
             // 
             // enrollmentPanel
             // 
+            this.enrollmentPanel.Controls.Add(this.enrollmentBackButton);
+            this.enrollmentPanel.Controls.Add(this.courseDescriptionTextBox);
+            this.enrollmentPanel.Controls.Add(this.professorRatingLabel);
+            this.enrollmentPanel.Controls.Add(this.professorLabel);
+            this.enrollmentPanel.Controls.Add(this.courseNameLabel);
+            this.enrollmentPanel.Controls.Add(this.courseCodeLabel);
+            this.enrollmentPanel.Controls.Add(this.label20);
+            this.enrollmentPanel.Controls.Add(this.label19);
+            this.enrollmentPanel.Controls.Add(this.label18);
+            this.enrollmentPanel.Controls.Add(this.label17);
+            this.enrollmentPanel.Controls.Add(this.label16);
+            this.enrollmentPanel.Controls.Add(this.deleteAllButtonCourseEnrolled);
             this.enrollmentPanel.Controls.Add(this.purchaseAllButton);
             this.enrollmentPanel.Controls.Add(this.courseEnrollDGV);
             this.enrollmentPanel.Controls.Add(this.purchaseButton);
@@ -396,12 +441,12 @@
             this.enrollmentPanel.Controls.Add(this.coursesComboBox);
             this.enrollmentPanel.Controls.Add(this.sCoursesRB);
             this.enrollmentPanel.Controls.Add(this.jCoursesRB);
-            this.enrollmentPanel.Controls.Add(this.deleteAllButton);
-            this.enrollmentPanel.Controls.Add(this.deleteButton);
+            this.enrollmentPanel.Controls.Add(this.deleteAllButtonCourseCart);
+            this.enrollmentPanel.Controls.Add(this.deleteButtonCourseCart);
             this.enrollmentPanel.Controls.Add(this.removeButton);
             this.enrollmentPanel.Controls.Add(this.addToCartButton);
             this.enrollmentPanel.Controls.Add(this.splitter1);
-            this.enrollmentPanel.Controls.Add(this.deleteCourseButton);
+            this.enrollmentPanel.Controls.Add(this.deleteButtonCourseEnrolled);
             this.enrollmentPanel.Controls.Add(this.label6);
             this.enrollmentPanel.Controls.Add(this.label5);
             this.enrollmentPanel.Controls.Add(this.label4);
@@ -410,11 +455,188 @@
             this.enrollmentPanel.Controls.Add(this.label1);
             this.enrollmentPanel.Controls.Add(this.editProfileLinkLabel);
             this.enrollmentPanel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.enrollmentPanel.Location = new System.Drawing.Point(12, 12);
+            this.enrollmentPanel.Location = new System.Drawing.Point(12, 6);
             this.enrollmentPanel.Name = "enrollmentPanel";
-            this.enrollmentPanel.Size = new System.Drawing.Size(1139, 630);
+            this.enrollmentPanel.Size = new System.Drawing.Size(1136, 606);
             this.enrollmentPanel.TabIndex = 9;
             this.enrollmentPanel.Visible = false;
+            // 
+            // enrollmentBackButton
+            // 
+            this.enrollmentBackButton.Location = new System.Drawing.Point(988, 7);
+            this.enrollmentBackButton.Name = "enrollmentBackButton";
+            this.enrollmentBackButton.Size = new System.Drawing.Size(75, 23);
+            this.enrollmentBackButton.TabIndex = 47;
+            this.enrollmentBackButton.Text = "Logout";
+            this.enrollmentBackButton.UseVisualStyleBackColor = true;
+            this.enrollmentBackButton.Click += new System.EventHandler(this.EnrollmentBackButton_Click);
+            // 
+            // courseDescriptionTextBox
+            // 
+            this.courseDescriptionTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.courseDescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.courseDescriptionTextBox.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.courseDescriptionTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.courseDescriptionTextBox.Location = new System.Drawing.Point(655, 230);
+            this.courseDescriptionTextBox.Multiline = true;
+            this.courseDescriptionTextBox.Name = "courseDescriptionTextBox";
+            this.courseDescriptionTextBox.ReadOnly = true;
+            this.courseDescriptionTextBox.Size = new System.Drawing.Size(461, 146);
+            this.courseDescriptionTextBox.TabIndex = 46;
+            // 
+            // professorRatingLabel
+            // 
+            this.professorRatingLabel.AutoSize = true;
+            this.professorRatingLabel.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.professorRatingLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.professorRatingLabel.Location = new System.Drawing.Point(790, 170);
+            this.professorRatingLabel.Name = "professorRatingLabel";
+            this.professorRatingLabel.Size = new System.Drawing.Size(0, 20);
+            this.professorRatingLabel.TabIndex = 45;
+            // 
+            // professorLabel
+            // 
+            this.professorLabel.AutoSize = true;
+            this.professorLabel.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.professorLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.professorLabel.Location = new System.Drawing.Point(790, 140);
+            this.professorLabel.Name = "professorLabel";
+            this.professorLabel.Size = new System.Drawing.Size(0, 20);
+            this.professorLabel.TabIndex = 44;
+            // 
+            // courseNameLabel
+            // 
+            this.courseNameLabel.AutoSize = true;
+            this.courseNameLabel.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseNameLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.courseNameLabel.Location = new System.Drawing.Point(790, 110);
+            this.courseNameLabel.Name = "courseNameLabel";
+            this.courseNameLabel.Size = new System.Drawing.Size(0, 20);
+            this.courseNameLabel.TabIndex = 43;
+            // 
+            // courseCodeLabel
+            // 
+            this.courseCodeLabel.AutoSize = true;
+            this.courseCodeLabel.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseCodeLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.courseCodeLabel.Location = new System.Drawing.Point(790, 80);
+            this.courseCodeLabel.Name = "courseCodeLabel";
+            this.courseCodeLabel.Size = new System.Drawing.Size(0, 20);
+            this.courseCodeLabel.TabIndex = 42;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label20.Location = new System.Drawing.Point(655, 200);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(149, 20);
+            this.label20.TabIndex = 40;
+            this.label20.Text = "Course Description:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label19.Location = new System.Drawing.Point(655, 170);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(62, 20);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "Rating:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label18.Location = new System.Drawing.Point(655, 140);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(82, 20);
+            this.label18.TabIndex = 38;
+            this.label18.Text = "Professor:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label17.Location = new System.Drawing.Point(655, 110);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(109, 20);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "Course Name:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label16.Location = new System.Drawing.Point(655, 80);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 20);
+            this.label16.TabIndex = 36;
+            this.label16.Text = "Course Code:";
+            // 
+            // deleteAllButtonCourseEnrolled
+            // 
+            this.deleteAllButtonCourseEnrolled.Location = new System.Drawing.Point(344, 308);
+            this.deleteAllButtonCourseEnrolled.Name = "deleteAllButtonCourseEnrolled";
+            this.deleteAllButtonCourseEnrolled.Size = new System.Drawing.Size(75, 23);
+            this.deleteAllButtonCourseEnrolled.TabIndex = 35;
+            this.deleteAllButtonCourseEnrolled.Text = "Delete All";
+            this.deleteAllButtonCourseEnrolled.UseVisualStyleBackColor = true;
+            this.deleteAllButtonCourseEnrolled.Click += new System.EventHandler(this.DeleteAllButtonCourseEnrolled_Click);
+            // 
+            // purchaseAllButton
+            // 
+            this.purchaseAllButton.Location = new System.Drawing.Point(836, 574);
+            this.purchaseAllButton.Name = "purchaseAllButton";
+            this.purchaseAllButton.Size = new System.Drawing.Size(75, 23);
+            this.purchaseAllButton.TabIndex = 34;
+            this.purchaseAllButton.Text = "Purchase All";
+            this.purchaseAllButton.UseVisualStyleBackColor = true;
+            this.purchaseAllButton.Click += new System.EventHandler(this.PurchaseAllButton_Click);
+            // 
+            // courseEnrollDGV
+            // 
+            this.courseEnrollDGV.AllowUserToAddRows = false;
+            this.courseEnrollDGV.AllowUserToDeleteRows = false;
+            this.courseEnrollDGV.AllowUserToResizeColumns = false;
+            this.courseEnrollDGV.AllowUserToResizeRows = false;
+            this.courseEnrollDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.courseEnrollDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.courseEnrollDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.courseEnrollDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.courseEnrollDGV.Location = new System.Drawing.Point(38, 135);
+            this.courseEnrollDGV.MultiSelect = false;
+            this.courseEnrollDGV.Name = "courseEnrollDGV";
+            this.courseEnrollDGV.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.courseEnrollDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.courseEnrollDGV.RowHeadersVisible = false;
+            this.courseEnrollDGV.RowHeadersWidth = 62;
+            this.courseEnrollDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.courseEnrollDGV.Size = new System.Drawing.Size(468, 168);
+            this.courseEnrollDGV.TabIndex = 33;
+            this.courseEnrollDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseEnrollDGV_CellContentClick);
+            // 
+            // purchaseButton
+            // 
+            this.purchaseButton.Location = new System.Drawing.Point(755, 574);
+            this.purchaseButton.Name = "purchaseButton";
+            this.purchaseButton.Size = new System.Drawing.Size(75, 23);
+            this.purchaseButton.TabIndex = 32;
+            this.purchaseButton.Text = "Purchase";
+            this.purchaseButton.UseVisualStyleBackColor = true;
+            this.purchaseButton.Click += new System.EventHandler(this.PurchaseButton_Click);
             // 
             // courseCartDGV
             // 
@@ -423,10 +645,10 @@
             this.courseCartDGV.AllowUserToResizeColumns = false;
             this.courseCartDGV.AllowUserToResizeRows = false;
             this.courseCartDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.courseCartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.courseCartDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.courseCartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.courseCartDGV.Location = new System.Drawing.Point(643, 403);
+            this.courseCartDGV.Location = new System.Drawing.Point(647, 403);
+            this.courseCartDGV.MultiSelect = false;
             this.courseCartDGV.Name = "courseCartDGV";
             this.courseCartDGV.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -442,11 +664,12 @@
             this.courseCartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.courseCartDGV.Size = new System.Drawing.Size(468, 168);
             this.courseCartDGV.TabIndex = 31;
+            this.courseCartDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseCartDGV_CellContentClick);
             // 
             // totalCostLabel
             // 
             this.totalCostLabel.AutoSize = true;
-            this.totalCostLabel.Location = new System.Drawing.Point(677, 579);
+            this.totalCostLabel.Location = new System.Drawing.Point(686, 579);
             this.totalCostLabel.Name = "totalCostLabel";
             this.totalCostLabel.Size = new System.Drawing.Size(34, 13);
             this.totalCostLabel.TabIndex = 30;
@@ -455,7 +678,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(641, 579);
+            this.label7.Location = new System.Drawing.Point(650, 579);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 29;
@@ -464,7 +687,7 @@
             // allCoursesRB
             // 
             this.allCoursesRB.AutoSize = true;
-            this.allCoursesRB.Location = new System.Drawing.Point(261, 382);
+            this.allCoursesRB.Location = new System.Drawing.Point(266, 384);
             this.allCoursesRB.Name = "allCoursesRB";
             this.allCoursesRB.Size = new System.Drawing.Size(36, 17);
             this.allCoursesRB.TabIndex = 27;
@@ -480,10 +703,11 @@
             this.availCourseDGV.AllowUserToResizeColumns = false;
             this.availCourseDGV.AllowUserToResizeRows = false;
             this.availCourseDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.availCourseDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.availCourseDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.availCourseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.availCourseDGV.Location = new System.Drawing.Point(39, 403);
+            this.availCourseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.availCourseDGV.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.availCourseDGV.Location = new System.Drawing.Point(38, 403);
+            this.availCourseDGV.MultiSelect = false;
             this.availCourseDGV.Name = "availCourseDGV";
             this.availCourseDGV.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -499,6 +723,7 @@
             this.availCourseDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.availCourseDGV.Size = new System.Drawing.Size(468, 168);
             this.availCourseDGV.TabIndex = 26;
+            this.availCourseDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AvailCourseDGV_CellContentClick);
             // 
             // majorLabel
             // 
@@ -545,7 +770,7 @@
             // sCoursesRB
             // 
             this.sCoursesRB.AutoSize = true;
-            this.sCoursesRB.Location = new System.Drawing.Point(197, 383);
+            this.sCoursesRB.Location = new System.Drawing.Point(202, 384);
             this.sCoursesRB.Name = "sCoursesRB";
             this.sCoursesRB.Size = new System.Drawing.Size(58, 17);
             this.sCoursesRB.TabIndex = 17;
@@ -557,7 +782,7 @@
             // jCoursesRB
             // 
             this.jCoursesRB.AutoSize = true;
-            this.jCoursesRB.Location = new System.Drawing.Point(138, 383);
+            this.jCoursesRB.Location = new System.Drawing.Point(143, 383);
             this.jCoursesRB.Name = "jCoursesRB";
             this.jCoursesRB.Size = new System.Drawing.Size(53, 17);
             this.jCoursesRB.TabIndex = 16;
@@ -566,25 +791,25 @@
             this.jCoursesRB.UseVisualStyleBackColor = true;
             this.jCoursesRB.CheckedChanged += new System.EventHandler(this.JCoursesRB_CheckedChanged);
             // 
-            // deleteAllButton
+            // deleteAllButtonCourseCart
             // 
-            this.deleteAllButton.Location = new System.Drawing.Point(955, 577);
-            this.deleteAllButton.Name = "deleteAllButton";
-            this.deleteAllButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteAllButton.TabIndex = 15;
-            this.deleteAllButton.Text = "Delete All";
-            this.deleteAllButton.UseVisualStyleBackColor = true;
-            this.deleteAllButton.Click += new System.EventHandler(this.DeleteAllButton_Click);
+            this.deleteAllButtonCourseCart.Location = new System.Drawing.Point(957, 573);
+            this.deleteAllButtonCourseCart.Name = "deleteAllButtonCourseCart";
+            this.deleteAllButtonCourseCart.Size = new System.Drawing.Size(75, 23);
+            this.deleteAllButtonCourseCart.TabIndex = 15;
+            this.deleteAllButtonCourseCart.Text = "Delete All";
+            this.deleteAllButtonCourseCart.UseVisualStyleBackColor = true;
+            this.deleteAllButtonCourseCart.Click += new System.EventHandler(this.DeleteAllButton_Click);
             // 
-            // deleteButton
+            // deleteButtonCourseCart
             // 
-            this.deleteButton.Location = new System.Drawing.Point(1037, 577);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 14;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            this.deleteButtonCourseCart.Location = new System.Drawing.Point(1039, 573);
+            this.deleteButtonCourseCart.Name = "deleteButtonCourseCart";
+            this.deleteButtonCourseCart.Size = new System.Drawing.Size(75, 23);
+            this.deleteButtonCourseCart.TabIndex = 14;
+            this.deleteButtonCourseCart.Text = "Delete";
+            this.deleteButtonCourseCart.UseVisualStyleBackColor = true;
+            this.deleteButtonCourseCart.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // removeButton
             // 
@@ -610,23 +835,24 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 630);
+            this.splitter1.Size = new System.Drawing.Size(3, 606);
             this.splitter1.TabIndex = 11;
             this.splitter1.TabStop = false;
             // 
-            // deleteCourseButton
+            // deleteButtonCourseEnrolled
             // 
-            this.deleteCourseButton.Location = new System.Drawing.Point(432, 308);
-            this.deleteCourseButton.Name = "deleteCourseButton";
-            this.deleteCourseButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteCourseButton.TabIndex = 10;
-            this.deleteCourseButton.Text = "Delete";
-            this.deleteCourseButton.UseVisualStyleBackColor = true;
+            this.deleteButtonCourseEnrolled.Location = new System.Drawing.Point(432, 308);
+            this.deleteButtonCourseEnrolled.Name = "deleteButtonCourseEnrolled";
+            this.deleteButtonCourseEnrolled.Size = new System.Drawing.Size(75, 23);
+            this.deleteButtonCourseEnrolled.TabIndex = 10;
+            this.deleteButtonCourseEnrolled.Text = "Delete";
+            this.deleteButtonCourseEnrolled.UseVisualStyleBackColor = true;
+            this.deleteButtonCourseEnrolled.Click += new System.EventHandler(this.DeleteButtonCourseEnrolled_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(640, 385);
+            this.label6.Location = new System.Drawing.Point(652, 385);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 13);
             this.label6.TabIndex = 9;
@@ -635,7 +861,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 387);
+            this.label5.Location = new System.Drawing.Point(44, 387);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 7;
@@ -644,7 +870,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 119);
+            this.label4.Location = new System.Drawing.Point(42, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 5;
@@ -686,6 +912,209 @@
             this.editProfileLinkLabel.TabIndex = 0;
             this.editProfileLinkLabel.TabStop = true;
             this.editProfileLinkLabel.Text = "Eidt Profile";
+            this.editProfileLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.EditProfileLinkLabel_LinkClicked);
+            // 
+            // editProfilePanel
+            // 
+            this.editProfilePanel.Controls.Add(this.majorEPComboBox);
+            this.editProfilePanel.Controls.Add(this.label8);
+            this.editProfilePanel.Controls.Add(this.confirmPassEPTextBox);
+            this.editProfilePanel.Controls.Add(this.label9);
+            this.editProfilePanel.Controls.Add(this.backEPButton);
+            this.editProfilePanel.Controls.Add(this.updateEPButton);
+            this.editProfilePanel.Controls.Add(this.femaleEPRB);
+            this.editProfilePanel.Controls.Add(this.maleEPRB);
+            this.editProfilePanel.Controls.Add(this.emailEPTextBox);
+            this.editProfilePanel.Controls.Add(this.lNameEPTextBox);
+            this.editProfilePanel.Controls.Add(this.fNameEPTextBox);
+            this.editProfilePanel.Controls.Add(this.passwordEPTextBox);
+            this.editProfilePanel.Controls.Add(this.usernameEPTextBox);
+            this.editProfilePanel.Controls.Add(this.label10);
+            this.editProfilePanel.Controls.Add(this.label11);
+            this.editProfilePanel.Controls.Add(this.label12);
+            this.editProfilePanel.Controls.Add(this.label13);
+            this.editProfilePanel.Controls.Add(this.label14);
+            this.editProfilePanel.Controls.Add(this.label15);
+            this.editProfilePanel.Location = new System.Drawing.Point(422, 62);
+            this.editProfilePanel.Name = "editProfilePanel";
+            this.editProfilePanel.Size = new System.Drawing.Size(387, 489);
+            this.editProfilePanel.TabIndex = 19;
+            this.editProfilePanel.Visible = false;
+            // 
+            // majorEPComboBox
+            // 
+            this.majorEPComboBox.FormattingEnabled = true;
+            this.majorEPComboBox.Items.AddRange(new object[] {
+            "Engineering",
+            "Business",
+            "Art",
+            "Computer Science",
+            "Information Technology"});
+            this.majorEPComboBox.Location = new System.Drawing.Point(165, 358);
+            this.majorEPComboBox.Name = "majorEPComboBox";
+            this.majorEPComboBox.Size = new System.Drawing.Size(121, 21);
+            this.majorEPComboBox.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(58, 358);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Major";
+            // 
+            // confirmPassEPTextBox
+            // 
+            this.confirmPassEPTextBox.Location = new System.Drawing.Point(165, 152);
+            this.confirmPassEPTextBox.Name = "confirmPassEPTextBox";
+            this.confirmPassEPTextBox.PasswordChar = '*';
+            this.confirmPassEPTextBox.Size = new System.Drawing.Size(187, 20);
+            this.confirmPassEPTextBox.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(56, 159);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(91, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Confirm Password";
+            // 
+            // backEPButton
+            // 
+            this.backEPButton.Location = new System.Drawing.Point(278, 402);
+            this.backEPButton.Name = "backEPButton";
+            this.backEPButton.Size = new System.Drawing.Size(75, 24);
+            this.backEPButton.TabIndex = 14;
+            this.backEPButton.Text = "Back";
+            this.backEPButton.UseVisualStyleBackColor = true;
+            this.backEPButton.Click += new System.EventHandler(this.BackEPButton_Click);
+            // 
+            // updateEPButton
+            // 
+            this.updateEPButton.Location = new System.Drawing.Point(197, 402);
+            this.updateEPButton.Name = "updateEPButton";
+            this.updateEPButton.Size = new System.Drawing.Size(75, 24);
+            this.updateEPButton.TabIndex = 13;
+            this.updateEPButton.Text = "Update";
+            this.updateEPButton.UseVisualStyleBackColor = true;
+            this.updateEPButton.Click += new System.EventHandler(this.UpdateEPButton_Click);
+            // 
+            // femaleEPRB
+            // 
+            this.femaleEPRB.AutoSize = true;
+            this.femaleEPRB.Location = new System.Drawing.Point(219, 321);
+            this.femaleEPRB.Name = "femaleEPRB";
+            this.femaleEPRB.Size = new System.Drawing.Size(59, 17);
+            this.femaleEPRB.TabIndex = 12;
+            this.femaleEPRB.TabStop = true;
+            this.femaleEPRB.Text = "Female";
+            this.femaleEPRB.UseVisualStyleBackColor = true;
+            this.femaleEPRB.CheckedChanged += new System.EventHandler(this.FemaleEPRB_CheckedChanged);
+            // 
+            // maleEPRB
+            // 
+            this.maleEPRB.AutoSize = true;
+            this.maleEPRB.Location = new System.Drawing.Point(165, 321);
+            this.maleEPRB.Name = "maleEPRB";
+            this.maleEPRB.Size = new System.Drawing.Size(48, 17);
+            this.maleEPRB.TabIndex = 11;
+            this.maleEPRB.TabStop = true;
+            this.maleEPRB.Text = "Male";
+            this.maleEPRB.UseVisualStyleBackColor = true;
+            this.maleEPRB.CheckedChanged += new System.EventHandler(this.MaleEPRB_CheckedChanged);
+            // 
+            // emailEPTextBox
+            // 
+            this.emailEPTextBox.Location = new System.Drawing.Point(166, 278);
+            this.emailEPTextBox.Name = "emailEPTextBox";
+            this.emailEPTextBox.Size = new System.Drawing.Size(187, 20);
+            this.emailEPTextBox.TabIndex = 10;
+            // 
+            // lNameEPTextBox
+            // 
+            this.lNameEPTextBox.Location = new System.Drawing.Point(166, 236);
+            this.lNameEPTextBox.Name = "lNameEPTextBox";
+            this.lNameEPTextBox.Size = new System.Drawing.Size(187, 20);
+            this.lNameEPTextBox.TabIndex = 9;
+            // 
+            // fNameEPTextBox
+            // 
+            this.fNameEPTextBox.Location = new System.Drawing.Point(165, 196);
+            this.fNameEPTextBox.Name = "fNameEPTextBox";
+            this.fNameEPTextBox.Size = new System.Drawing.Size(187, 20);
+            this.fNameEPTextBox.TabIndex = 8;
+            // 
+            // passwordEPTextBox
+            // 
+            this.passwordEPTextBox.Location = new System.Drawing.Point(165, 112);
+            this.passwordEPTextBox.Name = "passwordEPTextBox";
+            this.passwordEPTextBox.PasswordChar = '*';
+            this.passwordEPTextBox.Size = new System.Drawing.Size(187, 20);
+            this.passwordEPTextBox.TabIndex = 7;
+            // 
+            // usernameEPTextBox
+            // 
+            this.usernameEPTextBox.Location = new System.Drawing.Point(165, 72);
+            this.usernameEPTextBox.Name = "usernameEPTextBox";
+            this.usernameEPTextBox.ReadOnly = true;
+            this.usernameEPTextBox.Size = new System.Drawing.Size(187, 20);
+            this.usernameEPTextBox.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(58, 323);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Gender";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(58, 283);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Email";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(58, 243);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Last Name";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(58, 203);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "First Name";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(58, 119);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Password";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(56, 79);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Username";
             // 
             // jsCourseInfoBindingSource
             // 
@@ -701,74 +1130,30 @@
             // 
             this.js_CourseInfoTableAdapter.ClearBeforeFill = true;
             // 
-            // purchaseButton
-            // 
-            this.purchaseButton.Location = new System.Drawing.Point(746, 574);
-            this.purchaseButton.Name = "purchaseButton";
-            this.purchaseButton.Size = new System.Drawing.Size(75, 23);
-            this.purchaseButton.TabIndex = 32;
-            this.purchaseButton.Text = "Purchase";
-            this.purchaseButton.UseVisualStyleBackColor = true;
-            this.purchaseButton.Click += new System.EventHandler(this.PurchaseButton_Click);
-            // 
-            // courseEnrollDGV
-            // 
-            this.courseEnrollDGV.AllowUserToAddRows = false;
-            this.courseEnrollDGV.AllowUserToDeleteRows = false;
-            this.courseEnrollDGV.AllowUserToResizeColumns = false;
-            this.courseEnrollDGV.AllowUserToResizeRows = false;
-            this.courseEnrollDGV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.courseEnrollDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.courseEnrollDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.courseEnrollDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.courseEnrollDGV.Location = new System.Drawing.Point(39, 135);
-            this.courseEnrollDGV.Name = "courseEnrollDGV";
-            this.courseEnrollDGV.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.courseEnrollDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.courseEnrollDGV.RowHeadersVisible = false;
-            this.courseEnrollDGV.RowHeadersWidth = 62;
-            this.courseEnrollDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.courseEnrollDGV.Size = new System.Drawing.Size(468, 168);
-            this.courseEnrollDGV.TabIndex = 33;
-            // 
-            // purchaseAllButton
-            // 
-            this.purchaseAllButton.Location = new System.Drawing.Point(827, 574);
-            this.purchaseAllButton.Name = "purchaseAllButton";
-            this.purchaseAllButton.Size = new System.Drawing.Size(75, 23);
-            this.purchaseAllButton.TabIndex = 34;
-            this.purchaseAllButton.Text = "Purchase All";
-            this.purchaseAllButton.UseVisualStyleBackColor = true;
-            this.purchaseAllButton.Click += new System.EventHandler(this.PurchaseAllButton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 637);
-            this.Controls.Add(this.enrollmentPanel);
+            this.ClientSize = new System.Drawing.Size(1160, 639);
             this.Controls.Add(this.loginPagePanel);
+            this.Controls.Add(this.enrollmentPanel);
             this.Controls.Add(this.signUpPagePanel);
+            this.Controls.Add(this.editProfilePanel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "StudentEnrollmentForm";
             this.loginPagePanel.ResumeLayout(false);
             this.loginPagePanel.PerformLayout();
             this.signUpPagePanel.ResumeLayout(false);
             this.signUpPagePanel.PerformLayout();
             this.enrollmentPanel.ResumeLayout(false);
             this.enrollmentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.courseEnrollDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseCartDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.availCourseDGV)).EndInit();
+            this.editProfilePanel.ResumeLayout(false);
+            this.editProfilePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jsCourseInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._JONMSSQLSERVER_DB01DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseEnrollDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -803,12 +1188,12 @@
         private System.Windows.Forms.Panel enrollmentPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel editProfileLinkLabel;
-        private System.Windows.Forms.Button deleteAllButton;
-        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button deleteAllButtonCourseCart;
+        private System.Windows.Forms.Button deleteButtonCourseCart;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button addToCartButton;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Button deleteCourseButton;
+        private System.Windows.Forms.Button deleteButtonCourseEnrolled;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -825,7 +1210,6 @@
         private _JONMSSQLSERVER_DB01DataSet _JONMSSQLSERVER_DB01DataSet;
         private System.Windows.Forms.BindingSource jsCourseInfoBindingSource;
         private _JONMSSQLSERVER_DB01DataSetTableAdapters.js_CourseInfoTableAdapter js_CourseInfoTableAdapter;
-        private System.Windows.Forms.DataGridView availCourseDGV;
         private System.Windows.Forms.RadioButton allCoursesRB;
         private System.Windows.Forms.Label totalCostLabel;
         private System.Windows.Forms.Label label7;
@@ -833,6 +1217,39 @@
         private System.Windows.Forms.Button purchaseButton;
         private System.Windows.Forms.DataGridView courseEnrollDGV;
         private System.Windows.Forms.Button purchaseAllButton;
+        private System.Windows.Forms.DataGridView availCourseDGV;
+        private System.Windows.Forms.Button deleteAllButtonCourseEnrolled;
+        private System.Windows.Forms.Panel editProfilePanel;
+        private System.Windows.Forms.ComboBox majorEPComboBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox confirmPassEPTextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button backEPButton;
+        private System.Windows.Forms.Button updateEPButton;
+        private System.Windows.Forms.RadioButton femaleEPRB;
+        private System.Windows.Forms.RadioButton maleEPRB;
+        private System.Windows.Forms.TextBox emailEPTextBox;
+        private System.Windows.Forms.TextBox lNameEPTextBox;
+        private System.Windows.Forms.TextBox fNameEPTextBox;
+        private System.Windows.Forms.TextBox passwordEPTextBox;
+        private System.Windows.Forms.TextBox usernameEPTextBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label professorRatingLabel;
+        private System.Windows.Forms.Label professorLabel;
+        private System.Windows.Forms.Label courseNameLabel;
+        private System.Windows.Forms.Label courseCodeLabel;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox courseDescriptionTextBox;
+        private System.Windows.Forms.Button enrollmentBackButton;
     }
 }
 
